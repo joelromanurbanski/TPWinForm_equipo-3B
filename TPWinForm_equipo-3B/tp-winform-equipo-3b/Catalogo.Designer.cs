@@ -1,4 +1,7 @@
-﻿namespace tp_winform_equipo_3b
+﻿using System;
+using System.Windows.Forms;
+
+namespace tp_winform_equipo_3b
 {
     partial class Catalogo
     {
@@ -142,6 +145,16 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void Filtrar_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void dgvListaProd_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

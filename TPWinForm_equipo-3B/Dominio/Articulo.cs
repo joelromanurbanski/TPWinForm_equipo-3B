@@ -22,5 +22,13 @@ namespace Dominio
         public Categoria Categoria { get; set; }
 
         public string UrlImagen { get; set; }  // Imagen principal
+
+        public List<Imagen> Imagenes { get; set; }
+
+        public string FirstImage()
+        {
+            return Imagenes != null && Imagenes.Count > 0 ? Imagenes[0].UrlImagen : "";
+        }
+
     }
 }

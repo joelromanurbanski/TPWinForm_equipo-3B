@@ -61,6 +61,7 @@ namespace tp_winform_equipo_3b
             try
             {
                 ArticuloSQL articuloSQL = new ArticuloSQL();
+                ImagenSQL imagenSQL = new ImagenSQL();
 
                 if (articulo == null)
                     articulo = new Articulo();
@@ -85,7 +86,14 @@ namespace tp_winform_equipo_3b
                 }
                 else
                 {
-                    articuloSQL.Agregar(articulo);
+                    int idNuevo = articuloSQL.AgregarYDevolverId(articulo);
+
+                    if (!string.IsNullOrWhiteSpace(txtUrlImagen.Text))
+                    {
+                        Imagen imagen = new Imagen { UrlImagen = txtUrlImagen.Text };
+                        imagenSQL.Agregar(imagen, idNuevo);
+                    }
+
                     MessageBox.Show("Artículo agregado con éxito");
                 }
 

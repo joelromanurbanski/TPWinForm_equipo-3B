@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
 namespace SQL
 {
     public class ArticuloSQL
@@ -16,16 +15,17 @@ namespace SQL
         {
             List<Articulo> lista = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
+            ImagenSQL imagenSQL = new ImagenSQL(); // ← nuevo
 
             try
             {
                 datos.setearConsulta(@"SELECT A.Id, Codigo, Nombre, A.Descripcion, A.Precio, 
-                                    A.IdMarca, A.IdCategoria, 
-                                    M.Descripcion Marca, C.Descripcion Categoria,
-                                    (SELECT TOP 1 ImagenUrl FROM IMAGENES WHERE IdArticulo = A.Id) UrlImagen
-                                    FROM ARTICULOS A
-                                    LEFT JOIN MARCAS M ON A.IdMarca = M.Id
-                                    LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id");
+                            A.IdMarca, A.IdCategoria, 
+                            M.Descripcion Marca, C.Descripcion Categoria,
+                            (SELECT TOP 1 ImagenUrl FROM IMAGENES WHERE IdArticulo = A.Id) UrlImagen
+                            FROM ARTICULOS A
+                            LEFT JOIN MARCAS M ON A.IdMarca = M.Id
+                            LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -44,6 +44,9 @@ namespace SQL
                         UrlImagen = datos.Lector["UrlImagen"] != DBNull.Value ? datos.Lector["UrlImagen"].ToString() : ""
                     };
 
+                    // Cargar todas las imágenes asociadas
+                    art.Imagenes = imagenSQL.ListarPorArticulo(art.Id);
+
                     lista.Add(art);
                 }
 
@@ -59,20 +62,23 @@ namespace SQL
             }
         }
 
-        public void Agregar(Articulo nuevo)
+        public int AgregarYDevolverId(Articulo nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
+
             try
             {
-                datos.setearConsulta(@"INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) 
-                                       VALUES (@Codigo, @Nombre, @Descripcion, @IdMarca, @IdCategoria, @Precio)");
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria) " +
+                                     "OUTPUT INSERTED.Id VALUES (@Codigo, @Nombre, @Descripcion, @Precio, @IdMarca, @IdCategoria)");
+
                 datos.setearParametro("@Codigo", nuevo.Codigo);
                 datos.setearParametro("@Nombre", nuevo.Nombre);
                 datos.setearParametro("@Descripcion", nuevo.Descripcion);
+                datos.setearParametro("@Precio", nuevo.Precio);
                 datos.setearParametro("@IdMarca", nuevo.IdMarca);
                 datos.setearParametro("@IdCategoria", nuevo.IdCategoria);
-                datos.setearParametro("@Precio", nuevo.Precio);
-                datos.ejecutarAccion();
+
+                return (int)datos.ejecutarEscalar();
             }
             catch (Exception ex)
             {

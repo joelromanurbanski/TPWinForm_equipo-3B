@@ -10,16 +10,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace tp_winform_equipo_3b
 {
     public partial class Catalogo : Form
     {
+        private int indexImagen = 0;
         private List<Articulo> listaArticulos;
 
         public Catalogo()
         {
             InitializeComponent();
+
+            pbxArt.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbxArt.Click += pbxArt_Click;
+            pbxArt.DoubleClick += pbxArt_DoubleClick;
+
+            dgvListaProd.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvListaProd.SelectionChanged += dgvListaProd_SelectionChanged;
         }
 
         private void Catalogo_Load(object sender, EventArgs e)
@@ -35,12 +42,21 @@ namespace tp_winform_equipo_3b
                 listaArticulos = articuloSQL.Listar();
                 dgvListaProd.DataSource = listaArticulos;
                 ocultarColumnas();
-                if (listaArticulos.Count > 0)
-                    cargarImagen(listaArticulos[0].UrlImagen);
+
+                if (dgvListaProd.Rows.Count > 0)
+                {
+                    dgvListaProd.ClearSelection();
+                    dgvListaProd.Rows[0].Selected = true;
+                    dgvListaProd.CurrentCell = dgvListaProd.Rows[0].Cells[1];
+
+                    Articulo seleccionado = dgvListaProd.SelectedRows[0].DataBoundItem as Articulo;
+                    if (seleccionado != null)
+                        cargarImagen(seleccionado.FirstImage());
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Error al cargar artículos: " + ex.Message);
             }
         }
 
@@ -56,41 +72,94 @@ namespace tp_winform_equipo_3b
             {
                 if (!string.IsNullOrEmpty(url))
                 {
-                    pbxArt.Load(url);
+                    pbxArt.LoadAsync(url);
                 }
                 else
                 {
-                    // Si no hay URL en la BD
-                    pbxArt.Load("https://via.placeholder.com/250x250.png?text=Sin+Imagen");
+                    pbxArt.Image = null;
                 }
             }
             catch
             {
-                // Si la URL no responde o da error
-                pbxArt.Load("https://via.placeholder.com/250x250.png?text=Error+Imagen");
+
+                MessageBox.Show("No se pudo cargar la imagen ni desde la web ni desde el disco.", "Error de imagen");
+                pbxArt.Image = null;
+
             }
+           
         }
 
 
-        private void dgvListaProd_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvListaProd_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvListaProd.CurrentRow != null)
             {
                 Articulo seleccionado = (Articulo)dgvListaProd.CurrentRow.DataBoundItem;
-                cargarImagen(seleccionado.UrlImagen);
+                indexImagen = 0;
+                cargarImagen(seleccionado.FirstImage());
             }
         }
 
         private void pbxArt_Click(object sender, EventArgs e)
         {
-            // Si querés que haga algo al clickear la imagen
+            if (dgvListaProd.CurrentRow == null) return;
+
+            Articulo seleccionado = (Articulo)dgvListaProd.CurrentRow.DataBoundItem;
+
+            if (seleccionado.Imagenes == null || seleccionado.Imagenes.Count == 0)
+            {
+                cargarImagen("");
+                return;
+            }
+
+            if (indexImagen >= seleccionado.Imagenes.Count)
+                indexImagen = 0;
+
+            string url = seleccionado.Imagenes[indexImagen].UrlImagen;
+            cargarImagen(url);
+
+            indexImagen = (indexImagen + 1) % seleccionado.Imagenes.Count;
+        }
+
+        private void pbxArt_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvListaProd.CurrentRow == null) return;
+
+            Articulo seleccionado = (Articulo)dgvListaProd.CurrentRow.DataBoundItem;
+            string url = seleccionado.Imagenes != null && seleccionado.Imagenes.Count > 0
+                ? seleccionado.Imagenes[indexImagen == 0 ? 0 : indexImagen - 1].UrlImagen
+                : "";
+
+            Form visor = new Form
+            {
+                WindowState = FormWindowState.Maximized,
+                BackColor = Color.Black
+            };
+
+            PictureBox imagenGrande = new PictureBox
+            {
+                Dock = DockStyle.Fill,
+                SizeMode = PictureBoxSizeMode.Zoom
+            };
+
+            try
+            {
+                imagenGrande.Load(string.IsNullOrWhiteSpace(url) ? "https://via.placeholder.com/800x600.png?text=Sin+Imagen" : url);
+            }
+            catch
+            {
+                imagenGrande.Load("https://via.placeholder.com/800x600.png?text=Error+al+cargar");
+            }
+
+            visor.Controls.Add(imagenGrande);
+            visor.ShowDialog();
         }
 
         private void agregarProducto_Click(object sender, EventArgs e)
         {
             AgregarProducto ventana = new AgregarProducto();
             ventana.ShowDialog();
-            cargar();
+            //cargar();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -128,11 +197,6 @@ namespace tp_winform_equipo_3b
             }
         }
 
-        private void Filtrar_Click(object sender, EventArgs e)
-        {
-            // No hace falta usar el click del Label, lo podés dejar vacío
-        }
-
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
             List<Articulo> listaFiltrada;
@@ -146,11 +210,25 @@ namespace tp_winform_equipo_3b
             dgvListaProd.DataSource = null;
             dgvListaProd.DataSource = listaFiltrada;
             ocultarColumnas();
+
+            if (dgvListaProd.Rows.Count > 0)
+            {
+                dgvListaProd.ClearSelection();
+                dgvListaProd.Rows[0].Selected = true;
+                dgvListaProd.CurrentCell = dgvListaProd.Rows[0].Cells[1];
+
+                Articulo seleccionado = dgvListaProd.SelectedRows[0].DataBoundItem as Articulo;
+                if (seleccionado != null)
+                    cargarImagen(seleccionado.FirstImage());
+            }
+            else
+            {
+                pbxArt.Image = null;
+            }
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            // Aplica el mismo filtro que txtFiltro_TextChanged
             txtFiltro_TextChanged(sender, e);
         }
     }

@@ -16,3 +16,12 @@ S:\Proryecto Nuevo\Prueba v2\Prueba v2\TPWinForm_equipo-3B\SQL\obj\Debug\SQL.csp
 S:\Proryecto Nuevo\Prueba v2\Prueba v2\TPWinForm_equipo-3B\SQL\obj\Debug\SQL.csproj.Up2Date
 S:\Proryecto Nuevo\Prueba v2\Prueba v2\TPWinForm_equipo-3B\SQL\obj\Debug\SQL.dll
 S:\Proryecto Nuevo\Prueba v2\Prueba v2\TPWinForm_equipo-3B\SQL\obj\Debug\SQL.pdb
+S:\Proryecto Nuevo\Prueba v9 Funciona el boton de agregar art\Prueba v2\Prueba v2\TPWinForm_equipo-3B\SQL\bin\Debug\SQL.dll
+S:\Proryecto Nuevo\Prueba v9 Funciona el boton de agregar art\Prueba v2\Prueba v2\TPWinForm_equipo-3B\SQL\bin\Debug\SQL.pdb
+S:\Proryecto Nuevo\Prueba v9 Funciona el boton de agregar art\Prueba v2\Prueba v2\TPWinForm_equipo-3B\SQL\bin\Debug\Dominio.dll
+S:\Proryecto Nuevo\Prueba v9 Funciona el boton de agregar art\Prueba v2\Prueba v2\TPWinForm_equipo-3B\SQL\bin\Debug\Dominio.pdb
+S:\Proryecto Nuevo\Prueba v9 Funciona el boton de agregar art\Prueba v2\Prueba v2\TPWinForm_equipo-3B\SQL\obj\Debug\SQL.csproj.AssemblyReference.cache
+S:\Proryecto Nuevo\Prueba v9 Funciona el boton de agregar art\Prueba v2\Prueba v2\TPWinForm_equipo-3B\SQL\obj\Debug\SQL.csproj.CoreCompileInputs.cache
+S:\Proryecto Nuevo\Prueba v9 Funciona el boton de agregar art\Prueba v2\Prueba v2\TPWinForm_equipo-3B\SQL\obj\Debug\SQL.csproj.Up2Date
+S:\Proryecto Nuevo\Prueba v9 Funciona el boton de agregar art\Prueba v2\Prueba v2\TPWinForm_equipo-3B\SQL\obj\Debug\SQL.dll
+S:\Proryecto Nuevo\Prueba v9 Funciona el boton de agregar art\Prueba v2\Prueba v2\TPWinForm_equipo-3B\SQL\obj\Debug\SQL.pdb
