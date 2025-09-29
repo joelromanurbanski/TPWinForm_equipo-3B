@@ -106,6 +106,7 @@ namespace SQL
             }
         }
 
+  
         public void EliminarPorUrl(string url, int idArticulo)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -126,8 +127,8 @@ namespace SQL
             }
         }
 
+
     }
 
 
 }
-
