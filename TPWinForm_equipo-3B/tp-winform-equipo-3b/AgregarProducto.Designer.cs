@@ -35,6 +35,12 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtUrlImagen = new System.Windows.Forms.TextBox();
+            this.numCantidadImagenes = new System.Windows.Forms.NumericUpDown();
+            this.lstImagenes = new System.Windows.Forms.ListBox();
+            this.numImagenEliminar = new System.Windows.Forms.NumericUpDown();
+            this.btnEliminarImagen = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.numCantidadImagenes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numImagenEliminar)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -96,9 +102,9 @@
             this.lblUrlImagen.AutoSize = true;
             this.lblUrlImagen.Location = new System.Drawing.Point(12, 225);
             this.lblUrlImagen.Name = "lblUrlImagen";
-            this.lblUrlImagen.Size = new System.Drawing.Size(55, 13);
+            this.lblUrlImagen.Size = new System.Drawing.Size(81, 13);
             this.lblUrlImagen.TabIndex = 6;
-            this.lblUrlImagen.Text = "UrlImagen";
+            this.lblUrlImagen.Text = "UrlImagen (.jpg)";
             // 
             // textCodigo
             // 
@@ -146,9 +152,9 @@
             // 
             // BTN_AgregarImagenes
             // 
-            this.BTN_AgregarImagenes.Location = new System.Drawing.Point(77, 220);
+            this.BTN_AgregarImagenes.Location = new System.Drawing.Point(180, 251);
             this.BTN_AgregarImagenes.Name = "BTN_AgregarImagenes";
-            this.BTN_AgregarImagenes.Size = new System.Drawing.Size(75, 23);
+            this.BTN_AgregarImagenes.Size = new System.Drawing.Size(140, 22);
             this.BTN_AgregarImagenes.TabIndex = 13;
             this.BTN_AgregarImagenes.Text = "Agregar Imagen";
             this.BTN_AgregarImagenes.UseVisualStyleBackColor = true;
@@ -156,7 +162,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(77, 249);
+            this.btnAceptar.Location = new System.Drawing.Point(77, 372);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 14;
@@ -166,7 +172,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(307, 249);
+            this.btnCancelar.Location = new System.Drawing.Point(307, 372);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 15;
@@ -176,16 +182,52 @@
             // 
             // txtUrlImagen
             // 
-            this.txtUrlImagen.Location = new System.Drawing.Point(158, 223);
+            this.txtUrlImagen.Location = new System.Drawing.Point(137, 225);
             this.txtUrlImagen.Name = "txtUrlImagen";
-            this.txtUrlImagen.Size = new System.Drawing.Size(224, 20);
+            this.txtUrlImagen.Size = new System.Drawing.Size(245, 20);
             this.txtUrlImagen.TabIndex = 16;
+            // 
+            // numCantidadImagenes
+            // 
+            this.numCantidadImagenes.Location = new System.Drawing.Point(99, 223);
+            this.numCantidadImagenes.Name = "numCantidadImagenes";
+            this.numCantidadImagenes.Size = new System.Drawing.Size(32, 20);
+            this.numCantidadImagenes.TabIndex = 17;
+            // 
+            // lstImagenes
+            // 
+            this.lstImagenes.FormattingEnabled = true;
+            this.lstImagenes.Location = new System.Drawing.Point(99, 282);
+            this.lstImagenes.Name = "lstImagenes";
+            this.lstImagenes.Size = new System.Drawing.Size(283, 56);
+            this.lstImagenes.TabIndex = 18;
+            // 
+            // numImagenEliminar
+            // 
+            this.numImagenEliminar.Location = new System.Drawing.Point(99, 346);
+            this.numImagenEliminar.Name = "numImagenEliminar";
+            this.numImagenEliminar.Size = new System.Drawing.Size(32, 20);
+            this.numImagenEliminar.TabIndex = 19;
+            // 
+            // btnEliminarImagen
+            // 
+            this.btnEliminarImagen.Location = new System.Drawing.Point(137, 344);
+            this.btnEliminarImagen.Name = "btnEliminarImagen";
+            this.btnEliminarImagen.Size = new System.Drawing.Size(245, 23);
+            this.btnEliminarImagen.TabIndex = 20;
+            this.btnEliminarImagen.Text = "<-- Eliminar Imagen";
+            this.btnEliminarImagen.UseVisualStyleBackColor = true;
+            this.btnEliminarImagen.Click += new System.EventHandler(this.btnEliminarImagen_Click);
             // 
             // AgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 450);
+            this.Controls.Add(this.btnEliminarImagen);
+            this.Controls.Add(this.numImagenEliminar);
+            this.Controls.Add(this.lstImagenes);
+            this.Controls.Add(this.numCantidadImagenes);
             this.Controls.Add(this.txtUrlImagen);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -207,8 +249,11 @@
             this.Name = "AgregarProducto";
             this.Text = "Agregar Producto";
             this.Load += new System.EventHandler(this.AgregarProducto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numCantidadImagenes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numImagenEliminar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
@@ -230,5 +275,9 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtUrlImagen;
+        private System.Windows.Forms.NumericUpDown numCantidadImagenes;
+        private System.Windows.Forms.ListBox lstImagenes;
+        private System.Windows.Forms.NumericUpDown numImagenEliminar;
+        private System.Windows.Forms.Button btnEliminarImagen;
     }
 }

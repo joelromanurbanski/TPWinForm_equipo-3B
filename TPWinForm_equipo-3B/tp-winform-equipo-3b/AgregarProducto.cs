@@ -17,6 +17,8 @@ namespace tp_winform_equipo_3b
         private Articulo articulo = null;
         private bool esModificacion = false;
 
+        public int? IdArticuloCreado { get; private set; } = null;
+
         public AgregarProducto()
         {
             InitializeComponent();
@@ -63,7 +65,7 @@ namespace tp_winform_equipo_3b
                 ArticuloSQL articuloSQL = new ArticuloSQL();
                 ImagenSQL imagenSQL = new ImagenSQL();
 
-                if (articulo == null)
+                if (!esModificacion && articulo == null)
                     articulo = new Articulo();
 
                 articulo.Codigo = textCodigo.Text;
@@ -81,17 +83,38 @@ namespace tp_winform_equipo_3b
 
                 if (esModificacion)
                 {
+                    MessageBox.Show("Modificando artículo con ID: " + articulo.Id);
                     articuloSQL.Modificar(articulo);
+
+                    // 🔁 Eliminar imágenes anteriores
+                    imagenSQL.EliminarPorArticulo(articulo.Id);
+
+                    // ✅ Agregar todas las nuevas imágenes del ListBox
+                    foreach (string url in lstImagenes.Items)
+                    {
+                        Imagen img = new Imagen
+                        {
+                            UrlImagen = url,
+                            IdArticulo = articulo.Id
+                        };
+                        imagenSQL.Agregar(img, articulo.Id);
+                    }
+
                     MessageBox.Show("Artículo modificado con éxito");
                 }
                 else
                 {
                     int idNuevo = articuloSQL.AgregarYDevolverId(articulo);
+                    IdArticuloCreado = idNuevo;
 
-                    if (!string.IsNullOrWhiteSpace(txtUrlImagen.Text))
+                    foreach (string url in lstImagenes.Items)
                     {
-                        Imagen imagen = new Imagen { UrlImagen = txtUrlImagen.Text };
-                        imagenSQL.Agregar(imagen, idNuevo);
+                        Imagen img = new Imagen
+                        {
+                            UrlImagen = url,
+                            IdArticulo = idNuevo
+                        };
+                        imagenSQL.Agregar(img, idNuevo);
                     }
 
                     MessageBox.Show("Artículo agregado con éxito");
@@ -105,20 +128,40 @@ namespace tp_winform_equipo_3b
             }
         }
 
+        private void BTN_AgregarImagenes_Click(object sender, EventArgs e)
+        {
+            string url = txtUrlImagen.Text.Trim();
+
+            if (!string.IsNullOrWhiteSpace(url))
+            {
+                if (!lstImagenes.Items.Contains(url))
+                {
+                    lstImagenes.Items.Add(url);
+                    MessageBox.Show("URL agregada al artículo.");
+                }
+                else
+                {
+                    MessageBox.Show("La URL ya fue agregada.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor ingresá una URL válida antes de agregar.");
+            }
+        }
+
+        private void btnEliminarImagen_Click(object sender, EventArgs e)
+        {
+            if (lstImagenes.SelectedItem != null)
+            {
+                lstImagenes.Items.Remove(lstImagenes.SelectedItem);
+            }
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void BTN_AgregarImagenes_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Archivos de imagen|*.jpg;*.png;*.jpeg;*.gif";
-
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                txtUrlImagen.Text = dialog.FileName;
-            }
-        }
     }
 }
+

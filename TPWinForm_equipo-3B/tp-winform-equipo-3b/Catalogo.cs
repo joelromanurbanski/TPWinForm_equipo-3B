@@ -159,8 +159,27 @@ namespace tp_winform_equipo_3b
         {
             AgregarProducto ventana = new AgregarProducto();
             ventana.ShowDialog();
-            //cargar();
+
+            cargar();
+
+            if (ventana.IdArticuloCreado.HasValue)
+            {
+                int idNuevo = ventana.IdArticuloCreado.Value;
+
+                foreach (DataGridViewRow fila in dgvListaProd.Rows)
+                {
+                    Articulo art = fila.DataBoundItem as Articulo;
+                    if (art != null && art.Id == idNuevo)
+                    {
+                        fila.Selected = true;
+                        dgvListaProd.CurrentCell = fila.Cells[1];
+                        cargarImagen(art.FirstImage());
+                        break;
+                    }
+                }
+            }
         }
+
 
         private void btnModificar_Click(object sender, EventArgs e)
         {

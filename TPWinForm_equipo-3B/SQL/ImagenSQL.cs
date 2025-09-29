@@ -65,5 +65,46 @@ namespace SQL
                 datos.cerrarConexion();
             }
         }
+
+        public void Modificar(Imagen imagen)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("UPDATE IMAGENES SET ImagenUrl = @Url WHERE Id = @Id");
+                datos.setearParametro("@Url", imagen.UrlImagen);
+                datos.setearParametro("@Id", imagen.Id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void EliminarPorArticulo(int idArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DELETE FROM IMAGENES WHERE IdArticulo = @IdArticulo");
+                datos.setearParametro("@IdArticulo", idArticulo);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
     }
 }
