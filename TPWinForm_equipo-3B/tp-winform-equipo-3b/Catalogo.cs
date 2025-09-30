@@ -66,6 +66,9 @@ namespace tp_winform_equipo_3b
         {
             dgvListaProd.Columns["Id"].Visible = false;
             dgvListaProd.Columns["UrlImagen"].Visible = false;
+            dgvListaProd.Columns["IdCategoria"].Visible = false;
+            dgvListaProd.Columns["IdMarca"].Visible = false;
+            dgvListaProd.Columns["Id"].Visible = false;       
         }
 
         private void cargarImagen(string url)
@@ -346,22 +349,19 @@ namespace tp_winform_equipo_3b
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            string filtro = txtFiltro.Text.ToUpper();
+            string filtro = txtFiltro.Text.Trim();
 
-            List<Articulo> listaFiltrada;
+            if (string.IsNullOrWhiteSpace(filtro))
+            {
+                MessageBox.Show("Por favor, escribí algo para filtrar.", "Filtro vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            if (filtro.Length >= 2)
-            {
-                listaFiltrada = listaArticulos.FindAll(x =>
-                    x.Nombre.ToUpper().Contains(filtro) ||
-                    x.Marca.Descripcion.ToUpper().Contains(filtro) ||
-                    x.Descripcion.ToUpper().Contains(filtro)
-                );
-            }
-            else
-            {
-                listaFiltrada = listaArticulos;
-            }
+            List<Articulo> listaFiltrada = listaArticulos.FindAll(x =>
+                x.Nombre.ToUpper().Contains(filtro.ToUpper()) ||
+                x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper()) ||
+                x.Descripcion.ToUpper().Contains(filtro.ToUpper())
+            );
 
             dgvListaProd.DataSource = null;
             dgvListaProd.DataSource = listaFiltrada;
@@ -383,6 +383,7 @@ namespace tp_winform_equipo_3b
             }
         }
 
+<<<<<<< HEAD
        
 
 
@@ -394,6 +395,8 @@ namespace tp_winform_equipo_3b
 
 
 
+=======
+>>>>>>> d5dd896 (No cambiar tamaño del programa, Validación filtro y ocultar columnas de los ID)
     }
 }
 

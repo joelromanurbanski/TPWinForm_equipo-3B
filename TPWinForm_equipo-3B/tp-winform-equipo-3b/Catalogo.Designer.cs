@@ -160,7 +160,10 @@ namespace tp_winform_equipo_3b
             this.Controls.Add(this.agregarProducto);
             this.Controls.Add(this.pbxArt);
             this.Controls.Add(this.dgvListaProd);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Catalogo";
             this.Text = "Catalogo";
             this.Load += new System.EventHandler(this.Catalogo_Load);
