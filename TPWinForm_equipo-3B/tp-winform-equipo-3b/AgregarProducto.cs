@@ -73,6 +73,24 @@ namespace tp_winform_equipo_3b
                 articulo.Descripcion = txtDescripcion.Text;
                 articulo.UrlImagen = txtUrlImagen.Text;
 
+                if (string.IsNullOrWhiteSpace(textCodigo.Text))
+                {
+                    MessageBox.Show("El código es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(textNombre.Text))
+                {
+                    MessageBox.Show("El nombre es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtDescripcion.Text))
+                {
+                    MessageBox.Show("La descripción es obligatoria.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (decimal.TryParse(textPrecio.Text, out decimal precio))
                     articulo.Precio = precio;
                 else

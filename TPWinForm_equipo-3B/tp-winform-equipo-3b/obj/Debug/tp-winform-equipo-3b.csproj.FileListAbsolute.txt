@@ -151,3 +151,71 @@ S:\Proryecto Nuevo\Prueba v17\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform
 S:\Proryecto Nuevo\Prueba v17\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winfo.E3CC7A51.Up2Date
 S:\Proryecto Nuevo\Prueba v17\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.exe
 S:\Proryecto Nuevo\Prueba v17\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.pdb
+S:\Proryecto Nuevo\Prueba v18\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\tp-winform-equipo-3b.exe.config
+S:\Proryecto Nuevo\Prueba v18\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\tp-winform-equipo-3b.exe
+S:\Proryecto Nuevo\Prueba v18\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\tp-winform-equipo-3b.pdb
+S:\Proryecto Nuevo\Prueba v18\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\Dominio.dll
+S:\Proryecto Nuevo\Prueba v18\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\SQL.dll
+S:\Proryecto Nuevo\Prueba v18\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\Dominio.pdb
+S:\Proryecto Nuevo\Prueba v18\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\SQL.pdb
+S:\Proryecto Nuevo\Prueba v18\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.csproj.AssemblyReference.cache
+S:\Proryecto Nuevo\Prueba v18\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.exe.config
+S:\Proryecto Nuevo\Prueba v18\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp_winform_equipo_3b.AgregarProducto.resources
+S:\Proryecto Nuevo\Prueba v18\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp_winform_equipo_3b.Catalogo.resources
+S:\Proryecto Nuevo\Prueba v18\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp_winform_equipo_3b.Properties.Resources.resources
+S:\Proryecto Nuevo\Prueba v18\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.csproj.GenerateResource.cache
+S:\Proryecto Nuevo\Prueba v18\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.csproj.CoreCompileInputs.cache
+S:\Proryecto Nuevo\Prueba v18\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winfo.E3CC7A51.Up2Date
+S:\Proryecto Nuevo\Prueba v18\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.exe
+S:\Proryecto Nuevo\Prueba v18\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.pdb
+S:\Proryecto Nuevo\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\tp-winform-equipo-3b.exe.config
+S:\Proryecto Nuevo\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\tp-winform-equipo-3b.exe
+S:\Proryecto Nuevo\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\tp-winform-equipo-3b.pdb
+S:\Proryecto Nuevo\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\Dominio.dll
+S:\Proryecto Nuevo\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\SQL.dll
+S:\Proryecto Nuevo\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\Dominio.pdb
+S:\Proryecto Nuevo\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\SQL.pdb
+S:\Proryecto Nuevo\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.csproj.AssemblyReference.cache
+S:\Proryecto Nuevo\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.exe.config
+S:\Proryecto Nuevo\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp_winform_equipo_3b.AgregarProducto.resources
+S:\Proryecto Nuevo\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp_winform_equipo_3b.Catalogo.resources
+S:\Proryecto Nuevo\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp_winform_equipo_3b.Properties.Resources.resources
+S:\Proryecto Nuevo\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.csproj.GenerateResource.cache
+S:\Proryecto Nuevo\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.csproj.CoreCompileInputs.cache
+S:\Proryecto Nuevo\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winfo.E3CC7A51.Up2Date
+S:\Proryecto Nuevo\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.exe
+S:\Proryecto Nuevo\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.pdb
+S:\Proryecto Nuevo\Prueba v19 Validación nombre\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\tp-winform-equipo-3b.exe.config
+S:\Proryecto Nuevo\Prueba v19 Validación nombre\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\tp-winform-equipo-3b.exe
+S:\Proryecto Nuevo\Prueba v19 Validación nombre\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\tp-winform-equipo-3b.pdb
+S:\Proryecto Nuevo\Prueba v19 Validación nombre\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\Dominio.dll
+S:\Proryecto Nuevo\Prueba v19 Validación nombre\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\SQL.dll
+S:\Proryecto Nuevo\Prueba v19 Validación nombre\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\Dominio.pdb
+S:\Proryecto Nuevo\Prueba v19 Validación nombre\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\SQL.pdb
+S:\Proryecto Nuevo\Prueba v19 Validación nombre\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.csproj.AssemblyReference.cache
+S:\Proryecto Nuevo\Prueba v19 Validación nombre\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.exe.config
+S:\Proryecto Nuevo\Prueba v19 Validación nombre\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp_winform_equipo_3b.AgregarProducto.resources
+S:\Proryecto Nuevo\Prueba v19 Validación nombre\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp_winform_equipo_3b.Catalogo.resources
+S:\Proryecto Nuevo\Prueba v19 Validación nombre\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp_winform_equipo_3b.Properties.Resources.resources
+S:\Proryecto Nuevo\Prueba v19 Validación nombre\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.csproj.GenerateResource.cache
+S:\Proryecto Nuevo\Prueba v19 Validación nombre\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.csproj.CoreCompileInputs.cache
+S:\Proryecto Nuevo\Prueba v19 Validación nombre\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winfo.E3CC7A51.Up2Date
+S:\Proryecto Nuevo\Prueba v19 Validación nombre\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.exe
+S:\Proryecto Nuevo\Prueba v19 Validación nombre\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.pdb
+S:\Proryecto Nuevo\Prueba v21\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\tp-winform-equipo-3b.exe.config
+S:\Proryecto Nuevo\Prueba v21\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\tp-winform-equipo-3b.exe
+S:\Proryecto Nuevo\Prueba v21\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\tp-winform-equipo-3b.pdb
+S:\Proryecto Nuevo\Prueba v21\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\Dominio.dll
+S:\Proryecto Nuevo\Prueba v21\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\SQL.dll
+S:\Proryecto Nuevo\Prueba v21\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\Dominio.pdb
+S:\Proryecto Nuevo\Prueba v21\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\bin\Debug\SQL.pdb
+S:\Proryecto Nuevo\Prueba v21\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.csproj.AssemblyReference.cache
+S:\Proryecto Nuevo\Prueba v21\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.exe.config
+S:\Proryecto Nuevo\Prueba v21\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp_winform_equipo_3b.AgregarProducto.resources
+S:\Proryecto Nuevo\Prueba v21\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp_winform_equipo_3b.Catalogo.resources
+S:\Proryecto Nuevo\Prueba v21\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp_winform_equipo_3b.Properties.Resources.resources
+S:\Proryecto Nuevo\Prueba v21\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.csproj.GenerateResource.cache
+S:\Proryecto Nuevo\Prueba v21\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.csproj.CoreCompileInputs.cache
+S:\Proryecto Nuevo\Prueba v21\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winfo.E3CC7A51.Up2Date
+S:\Proryecto Nuevo\Prueba v21\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.exe
+S:\Proryecto Nuevo\Prueba v21\Prueba v19\Prueba v2\Prueba v2\TPWinForm_equipo-3B\tp-winform-equipo-3b\obj\Debug\tp-winform-equipo-3b.pdb

@@ -113,7 +113,6 @@ namespace tp_winform_equipo_3b
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(574, 20);
             this.txtFiltro.TabIndex = 6;
-            //this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // btnFiltrar
             // 
@@ -124,10 +123,10 @@ namespace tp_winform_equipo_3b
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
-
             // 
             // cbCambiarImagen
             // 
+            this.cbCambiarImagen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCambiarImagen.FormattingEnabled = true;
             this.cbCambiarImagen.Location = new System.Drawing.Point(859, 29);
             this.cbCambiarImagen.Name = "cbCambiarImagen";
@@ -179,7 +178,17 @@ namespace tp_winform_equipo_3b
 
         private void dgvListaProd_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            throw new NotImplementedException();
+            if (e.RowIndex >= 0 && e.RowIndex < dgvListaProd.Rows.Count)
+            {
+
+            }
+        }
+         private void dgvListaProd_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgvListaProd.Rows.Count)
+            {
+
+            }
         }
 
         #endregion
