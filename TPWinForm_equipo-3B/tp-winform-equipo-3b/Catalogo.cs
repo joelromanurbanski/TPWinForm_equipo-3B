@@ -27,6 +27,8 @@ namespace tp_winform_equipo_3b
 
             dgvListaProd.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvListaProd.SelectionChanged += dgvListaProd_SelectionChanged;
+
+            cbCambiarImagen.SelectedIndexChanged += cbCambiarImagen_SelectedIndexChanged;
         }
 
         private void Catalogo_Load(object sender, EventArgs e)
@@ -71,34 +73,34 @@ namespace tp_winform_equipo_3b
             try
             {
                 if (!string.IsNullOrEmpty(url))
-                {
                     pbxArt.LoadAsync(url);
-                }
                 else
-                {
                     pbxArt.Image = null;
-                }
             }
             catch
             {
-
                 MessageBox.Show("No se pudo cargar la imagen ni desde la web ni desde el disco.", "Error de imagen");
                 pbxArt.Image = null;
-
             }
-           
         }
-
 
         private void dgvListaProd_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvListaProd.CurrentRow != null)
+            if (dgvListaProd.SelectedRows.Count > 0)
             {
-                Articulo seleccionado = (Articulo)dgvListaProd.CurrentRow.DataBoundItem;
+                Articulo seleccionado = (Articulo)dgvListaProd.SelectedRows[0].DataBoundItem;
                 indexImagen = 0;
                 cargarImagen(seleccionado.FirstImage());
+
+                cbCambiarImagen.DataSource = null;
+                cbCambiarImagen.DataSource = seleccionado.Imagenes;
+                cbCambiarImagen.DisplayMember = "UrlImagen";
+
+                if (cbCambiarImagen.Items.Count > 0)
+                    cbCambiarImagen.SelectedIndex = 0;
             }
         }
+
 
         private void pbxArt_Click(object sender, EventArgs e)
         {
@@ -180,7 +182,6 @@ namespace tp_winform_equipo_3b
             }
         }
 
-
         private void btnModificar_Click(object sender, EventArgs e)
         {
             if (dgvListaProd.CurrentRow != null)
@@ -216,7 +217,7 @@ namespace tp_winform_equipo_3b
             }
         }
 
-        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        private void TxtFiltro_TextChanged(object sender, EventArgs e)
         {
             List<Articulo> listaFiltrada;
             string filtro = txtFiltro.Text.ToUpper();
@@ -246,9 +247,152 @@ namespace tp_winform_equipo_3b
             }
         }
 
-        private void btnFiltrar_Click(object sender, EventArgs e)
+        private void BtnFiltrar_Click(object sender, EventArgs e)
         {
             txtFiltro_TextChanged(sender, e);
         }
+
+        private void cbCambiarImagen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbCambiarImagen.SelectedItem is Imagen imagenSeleccionada)
+            {
+                pbxArt.ImageLocation = imagenSeleccionada.UrlImagen;
+            }
+            else
+            {
+                pbxArt.Image = null;
+            }
+        }
+
+
+        private void btnEliminarImagen_Click(object sender, EventArgs e)
+        {
+            if (cbCambiarImagen.SelectedItem is Imagen imagenSeleccionada && dgvListaProd.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvListaProd.CurrentRow.DataBoundItem;
+
+                // Eliminar de la base de datos
+                ImagenSQL imagenSQL = new ImagenSQL();
+                imagenSQL.EliminarPorUrl(imagenSeleccionada.UrlImagen, seleccionado.Id);
+
+                // Eliminar del objeto en memoria
+                seleccionado.Imagenes.Remove(imagenSeleccionada);
+
+                // Recargar ComboBox
+                cbCambiarImagen.DataSource = null;
+                cbCambiarImagen.DataSource = seleccionado.Imagenes;
+                cbCambiarImagen.DisplayMember = "UrlImagen";
+
+                // Actualizar imagen
+                if (cbCambiarImagen.Items.Count > 0)
+                {
+                    cbCambiarImagen.SelectedIndex = 0;
+                    Imagen siguiente = cbCambiarImagen.SelectedItem as Imagen;
+                    pbxArt.ImageLocation = siguiente?.UrlImagen;
+                }
+                else
+                {
+                    pbxArt.Image = null;
+                }
+
+                MessageBox.Show("Imagen eliminada correctamente.");
+            }
+        }
+
+        private void recargarComboImagenes(Articulo articulo)
+        {
+            cbCambiarImagen.DataSource = null;
+            cbCambiarImagen.DataSource = articulo.Imagenes;
+            cbCambiarImagen.DisplayMember = "ImagenUrl";
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+            string filtro = txtFiltro.Text.ToUpper();
+
+            if (filtro.Length >= 2)
+            {
+                listaFiltrada = listaArticulos.FindAll(x =>
+                    x.Nombre.ToUpper().Contains(filtro) ||
+                    x.Marca.Descripcion.ToUpper().Contains(filtro) ||
+                    x.Descripcion.ToUpper().Contains(filtro)
+                );
+            }
+            else
+            {
+                listaFiltrada = listaArticulos;
+            }
+
+            dgvListaProd.DataSource = null;
+            dgvListaProd.DataSource = listaFiltrada;
+            ocultarColumnas();
+
+            if (dgvListaProd.Rows.Count > 0)
+            {
+                dgvListaProd.ClearSelection();
+                dgvListaProd.Rows[0].Selected = true;
+                dgvListaProd.CurrentCell = dgvListaProd.Rows[0].Cells[1];
+
+                Articulo seleccionado = dgvListaProd.SelectedRows[0].DataBoundItem as Articulo;
+                if (seleccionado != null)
+                    cargarImagen(seleccionado.FirstImage());
+            }
+            else
+            {
+                pbxArt.Image = null;
+            }
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            string filtro = txtFiltro.Text.ToUpper();
+
+            List<Articulo> listaFiltrada;
+
+            if (filtro.Length >= 2)
+            {
+                listaFiltrada = listaArticulos.FindAll(x =>
+                    x.Nombre.ToUpper().Contains(filtro) ||
+                    x.Marca.Descripcion.ToUpper().Contains(filtro) ||
+                    x.Descripcion.ToUpper().Contains(filtro)
+                );
+            }
+            else
+            {
+                listaFiltrada = listaArticulos;
+            }
+
+            dgvListaProd.DataSource = null;
+            dgvListaProd.DataSource = listaFiltrada;
+            ocultarColumnas();
+
+            if (dgvListaProd.Rows.Count > 0)
+            {
+                dgvListaProd.ClearSelection();
+                dgvListaProd.Rows[0].Selected = true;
+                dgvListaProd.CurrentCell = dgvListaProd.Rows[0].Cells[1];
+
+                Articulo seleccionado = dgvListaProd.SelectedRows[0].DataBoundItem as Articulo;
+                if (seleccionado != null)
+                    cargarImagen(seleccionado.FirstImage());
+            }
+            else
+            {
+                pbxArt.Image = null;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
     }
 }
+
+    

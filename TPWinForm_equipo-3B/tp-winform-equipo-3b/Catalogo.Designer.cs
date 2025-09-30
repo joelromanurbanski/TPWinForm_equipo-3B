@@ -40,6 +40,8 @@ namespace tp_winform_equipo_3b
             this.Filtrar = new System.Windows.Forms.Label();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
+            this.cbCambiarImagen = new System.Windows.Forms.ComboBox();
+            this.btnEliminarImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArt)).BeginInit();
             this.SuspendLayout();
@@ -98,36 +100,59 @@ namespace tp_winform_equipo_3b
             // Filtrar
             // 
             this.Filtrar.AutoSize = true;
-            this.Filtrar.Location = new System.Drawing.Point(12, 35);
+            this.Filtrar.Location = new System.Drawing.Point(17, 31);
             this.Filtrar.Name = "Filtrar";
-            this.Filtrar.Size = new System.Drawing.Size(32, 13);
+            this.Filtrar.Size = new System.Drawing.Size(107, 13);
             this.Filtrar.TabIndex = 5;
-            this.Filtrar.Text = "Filtrar";
+            this.Filtrar.Text = "Filtrar por descripción";
             this.Filtrar.Click += new System.EventHandler(this.Filtrar_Click);
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(50, 33);
+            this.txtFiltro.Location = new System.Drawing.Point(130, 29);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(649, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(574, 20);
             this.txtFiltro.TabIndex = 6;
-            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
+            //this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(710, 30);
+            this.btnFiltrar.Location = new System.Drawing.Point(710, 28);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(143, 23);
+            this.btnFiltrar.Size = new System.Drawing.Size(143, 22);
             this.btnFiltrar.TabIndex = 7;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+
+            // 
+            // cbCambiarImagen
+            // 
+            this.cbCambiarImagen.FormattingEnabled = true;
+            this.cbCambiarImagen.Location = new System.Drawing.Point(859, 29);
+            this.cbCambiarImagen.Name = "cbCambiarImagen";
+            this.cbCambiarImagen.Size = new System.Drawing.Size(310, 21);
+            this.cbCambiarImagen.TabIndex = 8;
+            this.cbCambiarImagen.SelectedIndexChanged += new System.EventHandler(this.cbCambiarImagen_SelectedIndexChanged);
+            // 
+            // btnEliminarImagen
+            // 
+            this.btnEliminarImagen.BackColor = System.Drawing.Color.Red;
+            this.btnEliminarImagen.Location = new System.Drawing.Point(1176, 29);
+            this.btnEliminarImagen.Name = "btnEliminarImagen";
+            this.btnEliminarImagen.Size = new System.Drawing.Size(29, 23);
+            this.btnEliminarImagen.TabIndex = 9;
+            this.btnEliminarImagen.Text = "❎";
+            this.btnEliminarImagen.UseVisualStyleBackColor = false;
+            this.btnEliminarImagen.Click += new System.EventHandler(this.btnEliminarImagen_Click);
             // 
             // Catalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1218, 550);
+            this.Controls.Add(this.btnEliminarImagen);
+            this.Controls.Add(this.cbCambiarImagen);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.Filtrar);
@@ -167,6 +192,8 @@ namespace tp_winform_equipo_3b
         private System.Windows.Forms.Label Filtrar;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnFiltrar;
+        private ComboBox cbCambiarImagen;
+        private Button btnEliminarImagen;
     }
 }
 

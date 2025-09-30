@@ -106,5 +106,28 @@ namespace SQL
             }
         }
 
+        public void EliminarPorUrl(string url, int idArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DELETE FROM IMAGENES WHERE ImagenUrl = @url AND IdArticulo = @idArticulo");
+                datos.setearParametro("@url", url);
+                datos.setearParametro("@idArticulo", idArticulo);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
     }
+
+
 }
+
